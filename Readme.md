@@ -35,6 +35,7 @@ This is a simple MERN stack application that displays current prices of cryptocu
      MONG_URI=mongodb+srv://salceanu:f34mqJgy29B61Mm7@labsdatabase.5913czx.mongodb.net/?retryWrites=true&w=majority&appName=labsdatabase
      PORT=5000
      VITE_X_CG_DEMO_API_KEY=CG-1t8kdBZJMA1YUmpjF5nypF6R
+     ETHERSCAN_API_KEY=ETHERSCANAPI
      ```
 
 4. **Start the Server:**
@@ -73,9 +74,30 @@ crypto-trading-platform/
 - **Backend:** Node.js, Express, MongoDB, JWT
 - **API:** [Cryptocurrency API](https://example.com/api)
 
-**Contributing:**
+**UPDATE: TOKEN BALANCE INQUIRY**
 
-Contributions are welcome! Please create a pull request with your changes.
+Functionality
+Enables Ethereum wallet token balance inquiries.
+
+**New/Update Files**
+
+- **server.js**: Token balance inquiry route
+- **tokenController.js**: Token balance logic
+- **tokenRoutes.js**: Token balance route
+- **.env: ETHERSCAN_API_KEY** variable
+
+**Testing with insomnia**
+
+- **Method:** POST
+- **URL:** http://localhost:5000/api/tokens/token/balance
+- **Headers:** Content-Type: application/json
+- **Body:** 
+```
+{
+  "address": "0xYOUR_ADDRESS",
+  "tokenContract": "TOKEN_CONTRACT"
+}
+```
 
 **License:**
 

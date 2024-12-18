@@ -8,6 +8,7 @@ const transactionsRoutes = require("./routes/Transactions.js");
 const userPortfolio = require("./routes/userPortfolio.js");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const tokenRoutes = require('./routes/tokenRoutes');
 
 dotenv.config();
 
@@ -30,6 +31,7 @@ app.use((req, res, next) => {
 });
 
 // routes
+app.use("/api/tokens/", tokenRoutes);
 app.use("/api/workouts/", workoutRoutes);
 app.use("/api/portfolio/", userPortfolio);
 app.use("/api/transactions/", transactionsRoutes);
